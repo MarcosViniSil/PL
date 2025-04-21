@@ -23,6 +23,13 @@ p {
     margin-bottom: 10px;
 }
 
+#wrapTable{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 select,
 input[type="number"] {
     padding: 8px;
@@ -31,14 +38,11 @@ input[type="number"] {
     border-radius: 6px;
     font-size: 14px;
 }
-
-/* Seletor do tipo de problema */
 .typeProblem {
     display: block;
     margin: 0 auto 20px auto;
 }
 
-/* Grupos de input */
 .input-group,
 .constraint {
     display: flex;
@@ -52,12 +56,11 @@ input[type="number"] {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Botões */
 button {
     display: inline-block;
     margin: 10px auto;
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #59a0cf;
     color: white;
     font-size: 15px;
     border: none;
@@ -68,10 +71,8 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #59a0cf;
 }
-
-/* Container de restrições */
 #constraints {
     max-width: 800px;
     margin: 0 auto;
@@ -82,7 +83,6 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* Resultados */
 #result {
     max-width: 800px;
     margin: 20px auto;
@@ -102,16 +102,32 @@ button:hover {
     color: #555;
 }
 
-/* Tabela */
 table {
     width: 80%;
-    margin: 20px auto;
+    margin: 20px;
     border-collapse: collapse;
     background-color: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     overflow: hidden;
 }
+#wrapTable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tableResult {
+    width: 80%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed; 
+}
+
 
 th,
 td {
@@ -121,7 +137,7 @@ td {
 }
 
 thead {
-    background-color: #3498db;
+    background-color: #59a0cf;
     color: white;
     font-weight: bold;
 }
@@ -130,13 +146,11 @@ tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Destaque para melhor solução */
+
 tbody tr[style*="background-color"] {
     font-weight: bold;
     border: 2px solid #e0cf00;
 }
-
-/* Responsivo */
 @media (max-width: 768px) {
     .input-group,
     .constraint {
