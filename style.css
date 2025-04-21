@@ -151,6 +151,11 @@ tbody tr[style*="background-color"] {
     font-weight: bold;
     border: 2px solid #e0cf00;
 }
+
+#calculate,#send{
+    margin: auto;
+    margin-bottom: 10px;
+}
 @media (max-width: 768px) {
     .input-group,
     .constraint {

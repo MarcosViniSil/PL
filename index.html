@@ -26,7 +26,7 @@
 
     <div id="constraints">
         <h3>Restrições:</h3>
-        <button onclick="addConstraint()">Adicionar Restrição</button>
+        <button id="send" onclick="addConstraint()">Adicionar Restrição</button>
         <div class="constraint">
             <input type="number" class="coef-x1" placeholder="x1"> x<sub>1</sub> +
             <input type="number" class="coef-x2" placeholder="x2"> x<sub>2</sub>
@@ -42,7 +42,7 @@
 
     <p>x<sub>1</sub>,x<sub>2</sub> ≥ 0</p>
 
-    <button onclick="calculateSolution()">Resolver</button>
+    <button id="calculate" onclick="calculateSolution()">Resolver</button>
 
     <div id="result"></div>
 
