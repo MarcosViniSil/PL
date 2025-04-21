@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Programação linear</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Calculadora programação linear de 2 variáveis</h1>
+    <p>Este é um problema de:</p>
+    <select class="typeProblem">
+        <option value="Max" selected>Maximização</option>
+        <option value="Min">Minimização</option>
+    </select>
+
+    <div class="input-group">
+        Z =
+        <input type="number" id="z-x1" placeholder="x1">
+        x<sub>1</sub> +
+        <input type="number" id="z-x2" placeholder="x2">
+        x<sub>2</sub>
+    </div>
+
+
+    <div id="constraints">
+        <h3>Restrições:</h3>
+        <button onclick="addConstraint()">Adicionar Restrição</button>
+        <div class="constraint">
+            <input type="number" class="coef-x1" placeholder="x1"> x<sub>1</sub> +
+            <input type="number" class="coef-x2" placeholder="x2"> x<sub>2</sub>
+
+            <select class="operator">
+                <option value="<=" selected>≤</option>
+                <option value=">=">≥</option>
+            </select>
+
+            <input type="number" class="const" placeholder="constante">
+        </div>
+    </div>
+
+    <p>x<sub>1</sub>,x<sub>2</sub> ≥ 0</p>
+
+    <button onclick="calculateSolution()">Resolver</button>
+
+    <div id="result"></div>
+
+
+    <table id="tableResult" border="1">
+        <thead>
+            <tr>
+                <th>x1</th>
+                <th>x2</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
