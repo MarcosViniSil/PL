@@ -129,7 +129,7 @@ function addRow(x1, x2, result) {
     const table = document.getElementById("tableResult").getElementsByTagName('tbody')[0]
     const newRow = table.insertRow()
 
-    newRow.id = result
+    newRow.className = result
     const celX1 = newRow.insertCell(0)
     const celX2 = newRow.insertCell(1)
     const celResult = newRow.insertCell(2)
@@ -162,7 +162,11 @@ function calculateSolution() {
         }
     }
 
-    document.getElementById(`${bestValue}`).style.backgroundColor = "rgba(240, 240, 35, 0.9)"
+    let rowsResult = document.getElementsByClassName(`${bestValue}`)
+    console.log(rowsResult)
+    for(let i = 0 ; i < rowsResult.length ; i++){
+        rowsResult[i].style.backgroundColor = "rgba(240, 240, 35, 0.9)"
+    }
 
     const resultDiv = document.getElementById('result');
     
