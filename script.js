@@ -78,30 +78,31 @@ function findIntersectionPoints(constraints) {
 
     for (let i = 0; i < equations.length; i++) {
         for (let j = i + 1; j < equations.length; j++) {
-            const eq1 = equations[i] // pair of equations
-            const eq2 = equations[j] // pair of equations
+            const eq1 = equations[i]
+            const eq2 = equations[j]
 
             const denominator = eq1.a * eq2.b - eq2.a * eq1.b
             if (denominator === 0) continue
 
-            const x = (eq2.b * eq1.c - eq1.b * eq2.c) / denominator //Cramer's rule -> x
-            const y = (eq1.a * eq2.c - eq2.a * eq1.c) / denominator //Cramer's rule -> y
+            const x = (eq2.b * eq1.c - eq1.b * eq2.c) / denominator
+            const y = (eq1.a * eq2.c - eq2.a * eq1.c) / denominator
 
-            points.push([Number(x.toFixed(2)), Number(y.toFixed(2))])
+            points.push([Number(x.toFixed(4)), Number(y.toFixed(4))])
         }
     }
 
-    // Filter valid points
-    return points.filter(point =>
-        !(point[0] === 0 && point[1] === 0) && 
+    let allPoints =  points.filter(point =>
         allConstraints.every(c => {
-            const value = c.x * point[0] + c.y * point[1];
+            const value = Number(Number(c.x * point[0] + c.y * point[1]).toFixed(0));
             return c.type === "<=" ? value <= c.rhs :
                 c.type === ">=" ? value >= c.rhs : true;
         })
     );
-}
 
+    return allPoints.map(e => {
+        return [Number(Number(e[0]).toFixed(2)), Number(Number(e[1]).toFixed(2))];
+    });
+}
 function convertConstraintsIntoEquations(constraints) {
     const equations = []
     const allConstraints = [...constraints,
