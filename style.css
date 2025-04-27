@@ -118,7 +118,7 @@ table {
     align-items: center;
 }
 
-#tableResult {
+.tableResult {
     width: 80%;
     border-collapse: collapse;
     background-color: white;
