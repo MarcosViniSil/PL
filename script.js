@@ -93,6 +93,9 @@ function findIntersectionPoints(constraints) {
 
     let allPoints =  points.filter(point =>
         allConstraints.every(c => {
+            if(point[0] == 0 && point[1] == 0){
+                return false
+            }
             const value = Number(Number(c.x * point[0] + c.y * point[1]).toFixed(0));
             return c.type === "<=" ? value <= c.rhs :
                 c.type === ">=" ? value >= c.rhs : true;
